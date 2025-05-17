@@ -812,13 +812,14 @@ body {
 #signal-progress-container {
     padding: 0 24px 24px 24px;
     margin-top: -10px;
+    width: 100%;
 }
 
 .signal-progress {
     width: 100%;
-    height: 10px;
+    height: 14px;
     background-color: var(--bg-light);
-    border-radius: 5px;
+    border-radius: 7px;
     margin-top: 18px;
     overflow: hidden;
     position: relative;
@@ -828,13 +829,13 @@ body {
 .signal-progress-bar {
     height: 100%;
     background: var(--button-gradient);
-    border-radius: 5px;
+    border-radius: 7px;
     transition: width 1s linear;
     box-shadow: 0 1px 3px rgba(var(--accent-green-rgb), 0.3);
 }
 
 .signal-progress-text {
-    font-size: 13px;
+    font-size: 14px;
     color: var(--text-primary);
     opacity: 0.8;
     margin-top: 10px;
