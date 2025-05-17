@@ -81,26 +81,55 @@
                     </span>
                     <h3 id="settings-header-text">Настройки сигнала</h3>
                 </div>
+                
+                <!-- Переключатель режимов -->
+                <div class="mode-switcher">
+                    <button class="mode-btn active" data-mode="standard" id="standard-mode-btn">Стандартный</button>
+                    <button class="mode-btn" data-mode="otc" id="otc-mode-btn">OTC</button>
+                </div>
+                
                 <div class="input-group">
                     <label id="currency-label">Инструмент</label>
                     <div class="custom-select">
                         <div class="select-selected" data-select="currency-pair">EUR/USD</div>
                         <div class="select-items select-hide" id="currency-pair-items">
+                            <div class="market-type-header">Стандартные пары</div>
                             <div class="select-item" data-value="EUR/USD">EUR/USD</div>
                             <div class="select-item" data-value="GBP/USD">GBP/USD</div>
                             <div class="select-item" data-value="USD/JPY">USD/JPY</div>
                             <div class="select-item" data-value="USD/CHF">USD/CHF</div>
                             <div class="select-item" data-value="USD/CAD">USD/CAD</div>
                             <div class="select-item" data-value="AUD/USD">AUD/USD</div>
-                            <div class="select-item" data-value="NZD/USD">NZD/USD</div>
-                            <div class="select-item" data-value="AUD/NZD">AUD/NZD</div>
                             <div class="select-item" data-value="GBP/JPY">GBP/JPY</div>
-                            <div class="select-item" data-value="USD/CNH">USD/CNH</div>
                             <div class="select-item" data-value="EUR/JPY">EUR/JPY</div>
                             <div class="select-item" data-value="EUR/GBP">EUR/GBP</div>
                             <div class="select-item" data-value="EUR/CAD">EUR/CAD</div>
                             <div class="select-item" data-value="GBP/CHF">GBP/CHF</div>
                             <div class="select-item" data-value="CAD/JPY">CAD/JPY</div>
+                            <div class="select-item" data-value="AUD/CAD">AUD/CAD</div>
+                            <div class="select-item" data-value="GBP/CAD">GBP/CAD</div>
+                            <div class="select-item" data-value="AUD/JPY">AUD/JPY</div>
+                            <div class="select-item" data-value="EUR/CHF">EUR/CHF</div>
+                            <div class="select-item" data-value="CAD/CHF">CAD/CHF</div>
+                            
+                            <div class="market-type-header">Внебиржевые (OTC)</div>
+                            <div class="select-item" data-value="EUR/USD OTC">EUR/USD OTC</div>
+                            <div class="select-item" data-value="GBP/USD OTC">GBP/USD OTC</div>
+                            <div class="select-item" data-value="USD/JPY OTC">USD/JPY OTC</div>
+                            <div class="select-item" data-value="USD/CHF OTC">USD/CHF OTC</div>
+                            <div class="select-item" data-value="USD/CAD OTC">USD/CAD OTC</div>
+                            <div class="select-item" data-value="AUD/USD OTC">AUD/USD OTC</div>
+                            <div class="select-item" data-value="GBP/JPY OTC">GBP/JPY OTC</div>
+                            <div class="select-item" data-value="EUR/JPY OTC">EUR/JPY OTC</div>
+                            <div class="select-item" data-value="EUR/GBP OTC">EUR/GBP OTC</div>
+                            <div class="select-item" data-value="EUR/CAD OTC">EUR/CAD OTC</div>
+                            <div class="select-item" data-value="GBP/CHF OTC">GBP/CHF OTC</div>
+                            <div class="select-item" data-value="CAD/JPY OTC">CAD/JPY OTC</div>
+                            <div class="select-item" data-value="AUD/CAD OTC">AUD/CAD OTC</div>
+                            <div class="select-item" data-value="GBP/CAD OTC">GBP/CAD OTC</div>
+                            <div class="select-item" data-value="AUD/JPY OTC">AUD/JPY OTC</div>
+                            <div class="select-item" data-value="EUR/CHF OTC">EUR/CHF OTC</div>
+                            <div class="select-item" data-value="CAD/CHF OTC">CAD/CHF OTC</div>
                         </div>
                         <select id="currency-pair" class="hidden-select">
                             <option>EUR/USD</option>
@@ -109,36 +138,61 @@
                             <option>USD/CHF</option>
                             <option>USD/CAD</option>
                             <option>AUD/USD</option>
-                            <option>NZD/USD</option>
-                            <option>AUD/NZD</option>
                             <option>GBP/JPY</option>
-                            <option>USD/CNH</option>
                             <option>EUR/JPY</option>
                             <option>EUR/GBP</option>
                             <option>EUR/CAD</option>
                             <option>GBP/CHF</option>
                             <option>CAD/JPY</option>
-                            <option>CAD/CHF</option>
                             <option>AUD/CAD</option>
-                            <option>CHF/JPY</option>
-                            <option>EUR/CHF</option>
-                            <option>EUR/AUD</option>
-                            <option>AUD/JPY</option>
-                            <option>GBP/AUD</option>
                             <option>GBP/CAD</option>
-                            <option>AUD/CHF</option>
-</select>
-
+                            <option>AUD/JPY</option>
+                            <option>EUR/CHF</option>
+                            <option>CAD/CHF</option>
+                            <option>EUR/USD OTC</option>
+                            <option>GBP/USD OTC</option>
+                            <option>USD/JPY OTC</option>
+                            <option>USD/CHF OTC</option>
+                            <option>USD/CAD OTC</option>
+                            <option>AUD/USD OTC</option>
+                            <option>GBP/JPY OTC</option>
+                            <option>EUR/JPY OTC</option>
+                            <option>EUR/GBP OTC</option>
+                            <option>EUR/CAD OTC</option>
+                            <option>GBP/CHF OTC</option>
+                            <option>CAD/JPY OTC</option>
+                            <option>AUD/CAD OTC</option>
+                            <option>GBP/CAD OTC</option>
+                            <option>AUD/JPY OTC</option>
+                            <option>EUR/CHF OTC</option>
+                            <option>CAD/CHF OTC</option>
+                        </select>
+                    </div>
+                </div>
                 <div class="input-group">
                     <label id="timeframe-label">Время</label>
                     <div class="custom-select">
                         <div class="select-selected" data-select="timeframe">1 минута</div>
                         <div class="select-items select-hide" id="timeframe-items">
-                            <div class="select-item" data-value="1 минута">1 минута</div>
-                            <div class="select-item" data-value="2 минуты">2 минуты</div>
-                            <div class="select-item" data-value="3 минуты">3 минуты</div>
-                            <div class="select-item" data-value="4 минуты">4 минуты</div>
-                            <div class="select-item" data-value="5 минут">5 минут</div>
+                            <!-- Стандартные таймфреймы (по умолчанию) -->
+                            <div class="timeframes standard-timeframes">
+                                <div class="select-item" data-value="1 минута">1 минута</div>
+                                <div class="select-item" data-value="2 минуты">2 минуты</div>
+                                <div class="select-item" data-value="3 минуты">3 минуты</div>
+                                <div class="select-item" data-value="4 минуты">4 минуты</div>
+                                <div class="select-item" data-value="5 минут">5 минут</div>
+                            </div>
+                            <!-- OTC таймфреймы (скрыты по умолчанию) -->
+                            <div class="timeframes otc-timeframes" style="display: none;">
+                                <div class="select-item" data-value="5 секунд">5 секунд</div>
+                                <div class="select-item" data-value="15 секунд">15 секунд</div>
+                                <div class="select-item" data-value="30 секунд">30 секунд</div>
+                                <div class="select-item" data-value="1 минута">1 минута</div>
+                                <div class="select-item" data-value="2 минуты">2 минуты</div>
+                                <div class="select-item" data-value="3 минуты">3 минуты</div>
+                                <div class="select-item" data-value="4 минуты">4 минуты</div>
+                                <div class="select-item" data-value="5 минут">5 минут</div>
+                            </div>
                         </div>
                         <select id="timeframe" class="hidden-select">
                             <option>1 минута</option>
@@ -146,6 +200,9 @@
                             <option>3 минуты</option>
                             <option>4 минуты</option>
                             <option>5 минут</option>
+                            <option>5 секунд</option>
+                            <option>15 секунд</option>
+                            <option>30 секунд</option>
                         </select>
                     </div>
                 </div>
@@ -159,7 +216,7 @@
                     <option value="kz">Қазақша</option>
                 </select>
                 <button id="generate-btn" class="generate-btn-effect">Получить сигнал</button>
-                <a href="https://t.me/savotrader" target="_blank" class="telegram-btn">
+                <a href="https://t.me/SavoTrader" target="_blank" class="telegram-btn">
                     <svg class="telegram-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-16.5 7.6a2.24 2.24 0 0 0 .801 4.27l4.049.575 1.06 3.21a2.24 2.24 0 0 0 2.227 1.6 2.25 2.25 0 0 0 1.816-1.029l1.057-1.657 3.823 2.817a2.24 2.24 0 0 0 3.551-1.263l2.634-12.465a2.237 2.237 0 0 0-1.496-2.873z"></path>
                         <line x1="8" y1="12" x2="12" y2="16"></line>
@@ -207,6 +264,21 @@
             </div>
         </div>
     </div>
+    
+    <!-- Шаблон уведомления о блокировке -->
+    <div id="signal-locked-template" style="display: none;">
+        <div class="overlay"></div>
+        <div class="signal-locked">
+            <svg class="signal-locked-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            <h3 class="signal-locked-title">Сигнал недоступен</h3>
+            <p class="signal-locked-text">Вы не можете получить сигнал сейчас, так как предыдущий сигнал еще активен. Пожалуйста, дождитесь окончания таймфрейма.</p>
+            <button class="signal-locked-button" id="close-locked-notification">Понятно</button>
+        </div>
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
