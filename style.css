@@ -333,7 +333,7 @@ body {
 }
 
 .chart-block {
-    height: 450px;
+    height: 400px;
     flex: 2 0 auto;
     order: 2;
     margin-bottom: 20px;
@@ -342,8 +342,8 @@ body {
 
 .chart {
     width: 100%;
-    height: 100%;
-    min-height: 400px;
+    height: calc(100% - 60px);
+    min-height: 320px;
     position: relative;
     overflow: visible;
 }
@@ -768,8 +768,33 @@ body {
     justify-content: space-between;
     width: 100%;
     margin-top: 8px;
-    font-size: 15px;
-    opacity: 0.85;
+    margin-bottom: 0;
+    padding: 12px 16px;
+    background-color: var(--bg-light);
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid var(--border-color);
+}
+
+.signal-timeframe, .signal-probability {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.signal-timeframe span, .signal-probability span {
+    font-size: 12px;
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.signal-timeframe .value, .signal-probability .value {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--accent-green);
 }
 
 /* Анимация загрузки */
@@ -810,8 +835,8 @@ body {
 
 /* Улучшенные стили для прогресс-бара */
 #signal-progress-container {
-    padding: 0 24px 24px 24px;
-    margin-top: -10px;
+    padding: 0 24px 16px 24px;
+    margin-top: 16px;
     width: 100%;
 }
 
@@ -820,7 +845,7 @@ body {
     height: 14px;
     background-color: var(--bg-light);
     border-radius: 7px;
-    margin-top: 18px;
+    margin-top: 0;
     overflow: hidden;
     position: relative;
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -839,7 +864,7 @@ body {
     color: var(--text-primary);
     opacity: 0.8;
     margin-top: 10px;
-    text-align: right;
+    text-align: center;
     font-weight: 500;
 }
 
@@ -1054,7 +1079,7 @@ body {
     }
     
     .chart-block {
-        height: 500px; /* Увеличиваем высоту для планшетов */
+        height: 400px;
     }
 }
 
@@ -1078,8 +1103,13 @@ body {
     }
     
     .chart-block {
-        height: 400px; /* Меньшая высота для мобильных */
-        min-height: 350px;
+        height: 350px; /* Уменьшаем высоту для мобильных */
+        min-height: 300px;
+    }
+    
+    .chart {
+        height: calc(100% - 50px);
+        min-height: 250px;
     }
     
     .signal-direction {
@@ -1112,13 +1142,73 @@ body {
     
     #signal-progress-container {
         padding: 0 20px 20px 20px;
+        margin-top: 6px;
+    }
+    
+    .signal-time-info {
+        margin-top: 12px;
+        margin-bottom: 6px;
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+    
+    .signal-timeframe, .signal-probability {
+        gap: 2px;
+    }
+    
+    .signal-timeframe .value, .signal-probability .value {
+        font-size: 14px;
+    }
+    
+    .signal-timeframe span, .signal-probability span {
+        font-size: 10px;
+    }
+    
+    .signal-progress {
+        margin-top: 10px;
+        height: 12px;
+    }
+    
+    .signal-progress-text {
+        font-size: 13px;
+        margin-top: 8px;
+    }
+    
+    .chart-info {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+    
+    .chart-timeframe .value, .chart-accuracy .value {
+        font-size: 14px;
+    }
+    
+    .chart-timeframe span, .chart-accuracy span {
+        font-size: 9px;
+    }
+}
+
+/* Средние мобильные устройства */
+@media screen and (max-width: 640px) and (min-width: 481px) {
+    .signal-time-info {
+        margin: 12px 0 6px 0;
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+    
+    .signal-timeframe .value, .signal-probability .value {
+        font-size: 14px;
+    }
+    
+    .signal-timeframe span, .signal-probability span {
+        font-size: 10px;
     }
 }
 
 /* Очень маленькие мобильные устройства */
 @media screen and (max-width: 480px) {
     .chart-block {
-        height: 350px; /* Ещё меньше для маленьких экранов */
+        height: 300px; /* Ещё меньше для маленьких экранов */
     }
     
     .chart-header {
@@ -1128,4 +1218,113 @@ body {
     .chart-header h2 {
         font-size: 16px;
     }
+    
+    .signal-time-info {
+        margin: 10px 0 6px 0;
+        padding: 6px 10px;
+        font-size: 11px;
+        border-radius: 8px;
+    }
+    
+    .signal-timeframe, .signal-probability {
+        gap: 1px;
+    }
+    
+    .signal-timeframe .value, .signal-probability .value {
+        font-size: 13px;
+        font-weight: 600;
+    }
+    
+    .signal-timeframe span, .signal-probability span {
+        font-size: 9px;
+        letter-spacing: 0.3px;
+    }
+    
+    .signal-result {
+        padding: 16px;
+    }
+    
+    .signal-pair {
+        font-size: 18px;
+        margin-bottom: 6px;
+    }
+    
+    .signal-direction {
+        padding: 10px 14px;
+        margin: 12px 0;
+    }
+    
+    .signal-direction .signal-text {
+        font-size: 18px;
+    }
+    
+    .signal-direction .arrow-icon {
+        width: 32px;
+        height: 32px;
+        margin-left: 12px;
+    }
+    
+    #signal-progress-container {
+        padding: 0 16px 16px 16px;
+        margin-top: 4px;
+    }
+    
+    .signal-progress {
+        margin-top: 8px;
+        height: 10px;
+    }
+    
+    .signal-progress-text {
+        font-size: 12px;
+        margin-top: 6px;
+    }
+    
+    .chart-info {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+    
+    .chart-timeframe .value, .chart-accuracy .value {
+        font-size: 13px;
+    }
+    
+    .chart-timeframe span, .chart-accuracy span {
+        font-size: 9px;
+    }
+    
+    .chart {
+        height: calc(100% - 45px);
+        min-height: 220px;
+    }
+}
+
+/* Блок информации о графике */
+.chart-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 24px;
+    background-color: var(--bg-light);
+    border-bottom: 1px solid var(--border-color);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.chart-timeframe, .chart-accuracy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.chart-timeframe span, .chart-accuracy span {
+    font-size: 10px;
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.chart-timeframe .value, .chart-accuracy .value {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent-green);
 }
